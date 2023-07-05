@@ -1,11 +1,18 @@
-import React from "react";
-import Error from "./Error.jsx";
+import "../styles/App.css";
+import Layout from "./Layout";
+import Home from "./pages/Home";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import Quiz from "./pages/Quiz";
 
 const App = () => {
   return (
-    <div>
-      App <Error />
-    </div>
+    <Layout>
+      {/* <Home /> */}
+      {/* <Signup /> */}
+      {/* <Login /> */}
+      <Quiz />
+    </Layout>
   );
 };
 
