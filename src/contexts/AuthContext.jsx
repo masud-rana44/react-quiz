@@ -9,8 +9,9 @@ import {
 import React, { useContext, useEffect, useState } from "react";
 import "../firebase";
 
-const AuthContext = React.CreateContext();
+const AuthContext = React.createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useAuth() {
   return useContext(AuthContext);
 }

@@ -1,5 +1,5 @@
-import Summary from "../Summary";
 import Analysis from "../Analysis";
+import Summary from "../Summary";
 
 const Result = () => {
   return (

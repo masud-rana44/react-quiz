@@ -5,7 +5,8 @@
   justify-content: flex-end;
   align-items: center;
   margin-right: 30px;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .account > span:last-child {
