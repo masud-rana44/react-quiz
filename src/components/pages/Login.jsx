@@ -3,6 +3,7 @@ import Button from "../Button";
 import Form from "../Form";
 import Illustration from "../Illustration";
 import TextInput from "../TextInput";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -29,7 +30,7 @@ const Login = () => {
           </Button>
 
           <div className="info">
-            Don&apos;t have an account? <a href="signup.html">Signup</a>{" "}
+            Don&apos;t have an account? <Link to="/signup">Signup</Link>{" "}
             instead.
           </div>
         </Form>
