@@ -3,14 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import Button from "./Button";
 import Form from "./Form";
-import Loader from "./Loader";
 import TextInput from "./TextInput";
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [error, setError] = useState("");
 
@@ -55,7 +54,7 @@ const LoginForm = () => {
       {error && <p className="error">{error}</p>}
 
       <Button type="submit" disabled={loading}>
-        {loading ? <Loader /> : <span>Submit now</span>}
+        <span>{loading ? "submitting..." : "Submit now"}</span>
       </Button>
 
       <div className="info">

@@ -84,7 +84,7 @@ const SignupForm = () => {
       />
 
       <Button type="submit" disabled={loading}>
-        <span>Submit now</span>
+        <span>{loading ? 'submitting...' : 'Submit now'}</span>
       </Button>
 
       <div className="info">
