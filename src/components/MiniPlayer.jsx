@@ -20,12 +20,10 @@ const MiniPlayer = ({ videoId, title }) => {
   return (
     <div
       className={`${classes.miniPlayer} ${classes.floatingBtn}`}
+      onClick={status ? toggleMiniPlayer : null}
       ref={buttonRef}
     >
-      <span
-        className={`material-icons-outlined ${classes.open}`}
-        onClick={toggleMiniPlayer}
-      >
+      <span className={`material-icons-outlined ${classes.open}`}>
         {" "}
         play_circle_filled{" "}
       </span>
