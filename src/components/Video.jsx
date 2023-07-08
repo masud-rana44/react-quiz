@@ -3,7 +3,7 @@ import classes from "../styles/video.module.css";
 
 const Video = ({ title, youtubeID, noq }) => {
   return noq > 0 ? (
-    <Link to="/quiz">
+    <Link to={`/quiz/${youtubeID}`}>
       <div className={classes.video}>
         <img
           src={`http://img.youtube.com/vi/${youtubeID}/maxresdefault.jpg`}

@@ -8,9 +8,9 @@ const Videos = () => {
   const { loading, error, videos, hasMore } = useVideoList(page);
 
   const updatePage = () => {
-    setTimeout(() => {
-      setPage((page) => page + 8);
-    }, 500);
+    // setTimeout(() => {
+    // }, 500);
+    setPage((page) => page + 8);
   };
 
   return (
