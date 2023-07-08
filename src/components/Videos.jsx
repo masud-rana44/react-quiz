@@ -15,6 +15,16 @@ const Videos = () => {
 
   return (
     <div>
+      {error ? (
+        <div className="msg">{error}</div>
+      ) : loading ? (
+        <div className="msg">Loading...</div>
+      ) : null}
+
+      {!loading && !error && videos.length == 0 && (
+        <div className="msg">No data found!</div>
+      )}
+
       {!loading && !error && videos.length > 0 && (
         <InfiniteScroll
           dataLength={videos.length}
@@ -27,11 +37,6 @@ const Videos = () => {
           ))}
         </InfiniteScroll>
       )}
-      {!loading && !error && videos.length == 0 && (
-        <div className="msg">No data found!</div>
-      )}
-      {error && <div className="msg">{error}</div>}
-      {loading && <div className="msg">Loading...</div>}
     </div>
   );
 };

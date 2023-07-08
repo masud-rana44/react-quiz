@@ -1,40 +1,50 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import ReactPlayer from "react-player/youtube";
 import classes from "../styles/MiniPlayer.module.css";
 
-const MiniPlayer = ({ videoId }) => {
-  const [open, setOpen] = useState(true);
+const MiniPlayer = ({ videoId, title }) => {
+  const buttonRef = useRef();
+  const [status, setStatus] = useState(true);
+  const videoUrl = `http://www.youtube.com/watch?v=${videoId}`;
 
-  const handleToggle = () => {
-    setOpen((preOpen) => !preOpen);
+  const toggleMiniPlayer = () => {
+    if (status) {
+      buttonRef.current.classList.remove(classes.floatingBtn);
+      setStatus(false);
+    } else {
+      buttonRef.current.classList.add(classes.floatingBtn);
+      setStatus(true);
+    }
   };
 
   return (
     <div
-      className={`${classes.miniPlayer} ${!open ? classes.floatingBtn : null}`}
+      className={`${classes.miniPlayer} ${classes.floatingBtn}`}
+      ref={buttonRef}
     >
       <span
         className={`material-icons-outlined ${classes.open}`}
-        onClick={handleToggle}
+        onClick={toggleMiniPlayer}
       >
         {" "}
         play_circle_filled{" "}
       </span>
       <span
         className={`material-icons-outlined ${classes.close}`}
-        onClick={handleToggle}
+        onClick={toggleMiniPlayer}
       >
         {" "}
         close{" "}
       </span>
-      <iframe
-        width="100%"
-        height="100%"
-        src={`https://www.youtube.com/embed/${videoId}`}
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-      <p>#23 React Hooks Bangla - React useReducer hook Bangla</p>
+      <ReactPlayer
+        className={classes.player}
+        width="300px"
+        height="169px"
+        playing={!status}
+        url={videoUrl}
+        controls
+      />
+      <p>{title}</p>
     </div>
   );
 };
