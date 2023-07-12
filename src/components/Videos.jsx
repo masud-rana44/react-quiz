@@ -10,7 +10,7 @@ const Videos = () => {
   const updatePage = () => {
     // setTimeout(() => {
     // }, 500);
-    setPage((page) => page + 8);
+    setPage((page) => page + 32);
   };
 
   return (
@@ -31,9 +31,16 @@ const Videos = () => {
           next={updatePage}
           hasMore={hasMore}
           loader={<h4 style={{ gridColumn: "1 / -1" }}>Loading...</h4>}
+          endMessage={<p>No more data to load.</p>}
+          scrollThreshold={0.8}
         >
           {videos.map((video) => (
-            <Video key={video.youtubeID} {...video} />
+            <Video
+              key={video.youtubeID}
+              title={video.title}
+              youtubeID={video.youtubeID}
+              noq={video.noq}
+            />
           ))}
         </InfiniteScroll>
       )}

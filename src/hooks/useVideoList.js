@@ -24,7 +24,7 @@ export default function useVideoList(page) {
         videosRef,
         orderByKey(),
         startAt(page + ""),
-        limitToFirst(6)
+        limitToFirst(64)
       );
 
       try {

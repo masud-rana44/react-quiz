@@ -3,14 +3,13 @@ import { initializeApp } from "firebase/app";
 
 // firebase configuration
 const app = initializeApp({
-  apiKey: "AIzaSyAzUpEm8K92PvG6Rz2VuIWKwu6xR93L1rI",
-  authDomain: "react-quiz-dev-65fc5.firebaseapp.com",
-  databaseURL:
-    "https://react-quiz-dev-65fc5-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "react-quiz-dev-65fc5",
-  storageBucket: "react-quiz-dev-65fc5.appspot.com",
-  messagingSenderId: "545038191674",
-  appId: "1:545038191674:web:28053aed67277d1504b903",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_DATABASE_URL,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 });
 
 export default app;

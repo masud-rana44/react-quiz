@@ -6,7 +6,7 @@ const Summary = ({ score, noq }) => {
   const { result, loading } = useFetch(
     "https://api.pexels.com/v1/search?query=nature&per_page=1",
     {
-      Authorization: "G5lutisdtcodIfI92X4TRJN5EjPwbC0vVCobhqiAXH3yd6ylff73h1A1",
+      Authorization: import.meta.env.VITE_PEXELS_AUTHORIZATION,
     },
     "GET"
   );

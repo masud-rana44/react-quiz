@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function useFetch(url, headers, method) {
   const [loading, setLoading] = useState(false);
