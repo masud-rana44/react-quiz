@@ -22,8 +22,3 @@
 .button:hover span {
   color: #fff;
 }
-
-.button {
-  height: 44px;
-  margin-top: 2rem;
-}
